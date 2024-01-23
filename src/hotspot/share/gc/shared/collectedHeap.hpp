@@ -287,6 +287,11 @@ class CollectedHeap : public CHeapObj<mtGC> {
   }
 
   virtual void fill_with_dummy_object(HeapWord* start, HeapWord* end, bool zap);
+
+  virtual size_t zero_unused() {
+    return size_t(-1);
+  }
+
   virtual size_t min_dummy_object_size() const;
   size_t tlab_alloc_reserve() const;
 

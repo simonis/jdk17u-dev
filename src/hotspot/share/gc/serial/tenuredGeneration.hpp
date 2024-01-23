@@ -113,6 +113,8 @@ class TenuredGeneration: public CardGeneration {
 
   virtual void record_spaces_top();
 
+  virtual size_t zero_unused();
+
   // Statistics
 
   virtual void update_gc_stats(Generation* current_generation, bool full);

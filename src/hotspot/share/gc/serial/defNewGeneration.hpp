@@ -275,6 +275,8 @@ protected:
   // Save the tops for eden, from, and to
   virtual void record_spaces_top();
 
+  virtual size_t zero_unused();
+
   // Accessing marks
   void save_marks();
   void reset_saved_marks();

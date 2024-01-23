@@ -660,6 +660,10 @@ void OffsetTableContigSpace::verify() const {
   guarantee(p == top(), "end of last object must match end of space");
 }
 
+size_t ContiguousSpace::zero_unused() {
+  return mangler()->zero_unused();
+}
+
 
 size_t TenuredSpace::allowed_dead_ratio() const {
   return MarkSweepDeadRatio;

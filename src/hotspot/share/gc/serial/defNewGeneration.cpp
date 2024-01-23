@@ -873,6 +873,13 @@ void DefNewGeneration::ref_processor_init() {
 }
 
 
+size_t DefNewGeneration::zero_unused() {
+  size_t res = eden()->zero_unused();
+  res += to()->zero_unused();
+  res += from()->zero_unused();
+  return res;
+}
+
 void DefNewGeneration::update_counters() {
   if (UsePerfData) {
     _eden_counters->update_all();

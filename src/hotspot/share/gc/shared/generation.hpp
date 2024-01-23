@@ -352,6 +352,8 @@ class Generation: public CHeapObj<mtGC> {
   // activity to make them parsable again. The default is to do nothing.
   virtual void ensure_parsability() {}
 
+  virtual size_t zero_unused() = 0;
+
   // Generations may keep statistics about collection. This method
   // updates those statistics. current_generation is the generation
   // that was most recently collected. This allows the generation to
